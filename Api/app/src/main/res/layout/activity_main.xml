@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_winter_day"
+    android:orientation="vertical"
+    tools:context=".Weather.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/editdiadiem"
+        android:layout_width="272dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/baseline_location_on_24"
+        android:hint="Enter city name!"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btLayThongTin"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/button_color"
+        android:text="search"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/btnunits"-->
+    <!--        style="@style/Widget.Material3.Button.OutlinedButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="68dp"-->
+    <!--        android:layout_marginEnd="12dp"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:background="@drawable/custom_button_user"-->
+    <!--        android:gravity="right|center"-->
+    <!--        android:text="@string/metric"-->
+    <!--        android:textColor="@color/black"-->
+
+    <!--        android:textSize="18sp"-->
+    <!--        android:textStyle="normal"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/ic_location"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_editor_absoluteX="1dp"
+        app:layout_editor_absoluteY="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/nhietdo"
+                    android:layout_width="208dp"
+                    android:layout_height="233dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="center"
+                    android:text="23"
+                    android:textColor="@color/white"
+                    android:textSize="145sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.462" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="65dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="54dp"
+                    android:orientation="vertical"
+                    android:src="@color/colorTransparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/CityName"
+                    app:shapeAppearanceOverlay="@style/ImageView">
+
+                </com.google.android.material.imageview.ShapeableImageView>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@drawable/dash_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_max"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="center"
+                    android:text="@string/max"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nhietdoMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="left|center"
+                    android:text="23°"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/tv_max"
+                    app:layout_constraintTop_toTopOf="@id/tv_max" />
+
+                <TextView
+                    android:id="@+id/tv_min"
+                    android:layout_width="35dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="center"
+                    android:text="@string/min"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nhietdoMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="left|center"
+                    android:paddingTop="5dp"
+                    android:text="13°"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_min"
+                    app:layout_constraintStart_toEndOf="@+id/tv_min" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:gravity="center"
+                    android:text="Ngay / Thang/ Nam"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/CamGiac" />
+
+                <TextView
+                    android:id="@+id/tv_celsius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/sarabun_regular"
+                    android:text="°"
+                    android:textColor="@color/white"
+                    android:textSize="130sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.806"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/CityName" />
+
+                <ImageView
+                    android:id="@+id/ic_location"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="0dp"
+                    android:outlineAmbientShadowColor="@color/white"
+                    android:src="@drawable/baseline_location_on_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/CityName"
+                    android:layout_width="177dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:text="Phu Ly, Ha Nam"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.607"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/CamGiac"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="190dp"
+                    android:fontFamily="@font/adlamdisplay_regular"
+                    android:gravity="center"
+                    android:text="@string/information_weather"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/nhietdo" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    app:circularflow_defaultRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDate">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_temp_view"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="318dp"
+                        tools:layout_editor_absoluteY="388dp">
+
+                        <TextView
+                            android:id="@+id/doam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Độ ẩm"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/imgdoam"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/humidity" />
+
+                        <TextView
+                            android:id="@+id/txtDoam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="20%"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_temp_view"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="318dp"
+                        tools:layout_editor_absoluteY="388dp">
+
+                        <TextView
+                            android:id="@+id/tocdogio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Gió"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/imgtocdogio"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/windy" />
+
+                        <TextView
+                            android:id="@+id/txtGio"
+                            android:layout_width="47dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:fontFamily="@font/sarabun_regular"
+                            android:text="1.2m/s"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_temp_view"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="318dp"
+                        tools:layout_editor_absoluteY="388dp">
+
+                        <TextView
+                            android:id="@+id/phantrammay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Mây"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/imgphantrammay"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/cloudy" />
+
+                        <TextView
+                            android:id="@+id/txtMay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sarabun_regular"
+                            android:text="20%"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_temp_view"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="318dp"
+                        tools:layout_editor_absoluteY="388dp">
+
+                        <TextView
+                            android:id="@+id/tv_time_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Áp suất"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/img_weather_now"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/atmospheric" />
+
+                        <TextView
+                            android:id="@+id/txtApsuat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sarabun_regular"
+                            android:text="982hPa"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btLay7day"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/button_color"
+                    android:text="show more"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@color/none"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint">
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:fillViewport="true"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_editor_absoluteX="1dp"
+                    app:layout_editor_absoluteY="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/none">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime1"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 1"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam1"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam1"
+                                app:layout_constraintTop_toBottomOf="@+id/doam1" />
+
+                            <TextView
+                                android:id="@+id/min1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max1"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max1"
+                                app:layout_constraintTop_toTopOf="@+id/max1" />
+
+                            <TextView
+                                android:id="@+id/mota1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo1"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo1"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo1" />
+
+                            <TextView
+                                android:id="@+id/tex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio1"
+                                app:layout_constraintEnd_toStartOf="@+id/gio1"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio1"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota1" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio1"
+                                app:layout_constraintTop_toTopOf="@+id/gio1"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime2"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 2"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam2"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam2"
+                                app:layout_constraintTop_toBottomOf="@+id/doam2" />
+
+                            <TextView
+                                android:id="@+id/min2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max2"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max2"
+                                app:layout_constraintTop_toTopOf="@+id/max2" />
+
+                            <TextView
+                                android:id="@+id/mota2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo2"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo2"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio2"
+                                app:layout_constraintEnd_toStartOf="@+id/gio2"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio2"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio2"
+                                app:layout_constraintTop_toTopOf="@+id/gio2"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime3"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 3"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam3"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam3"
+                                app:layout_constraintTop_toBottomOf="@+id/doam3" />
+
+                            <TextView
+                                android:id="@+id/min3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max3"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max3"
+                                app:layout_constraintTop_toTopOf="@+id/max3" />
+
+                            <TextView
+                                android:id="@+id/mota3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo3"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo3"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio3"
+                                app:layout_constraintEnd_toStartOf="@+id/gio3"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota3"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio3"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio3"
+                                app:layout_constraintTop_toTopOf="@+id/gio3"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime4"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 4"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam4"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam4"
+                                app:layout_constraintTop_toBottomOf="@+id/doam4" />
+
+                            <TextView
+                                android:id="@+id/min4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max4"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max4"
+                                app:layout_constraintTop_toTopOf="@+id/max4" />
+
+                            <TextView
+                                android:id="@+id/mota4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo4"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo4"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio4"
+                                app:layout_constraintEnd_toStartOf="@+id/gio4"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota4"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio4"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio4"
+                                app:layout_constraintTop_toTopOf="@+id/gio4"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime5"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 5"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam5"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam5"
+                                app:layout_constraintTop_toBottomOf="@+id/doam5" />
+
+                            <TextView
+                                android:id="@+id/min5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max5"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max5"
+                                app:layout_constraintTop_toTopOf="@+id/max5" />
+
+                            <TextView
+                                android:id="@+id/mota5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo5"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo5"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo5" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio5"
+                                app:layout_constraintEnd_toStartOf="@+id/gio5"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio5"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota5" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio5"
+                                app:layout_constraintTop_toTopOf="@+id/gio5"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime6"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 6"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam6"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam6"
+                                app:layout_constraintTop_toBottomOf="@+id/doam6" />
+
+                            <TextView
+                                android:id="@+id/min6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max6"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max6"
+                                app:layout_constraintTop_toTopOf="@+id/max6" />
+
+                            <TextView
+                                android:id="@+id/mota6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo6"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo6"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo6" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio6"
+                                app:layout_constraintEnd_toStartOf="@+id/gio6"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota6"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio6"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota6" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio6"
+                                app:layout_constraintTop_toTopOf="@+id/gio6"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:background="@drawable/custom_temp_view"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:background="@color/white"
+                                android:id="@+id/datetime7"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:text="Gio 7"
+                                android:textColor="@color/purple_700"
+                                android:textSize="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/nhietdo7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:fontFamily="@font/adlamdisplay_regular"
+                                android:gravity="center"
+                                android:text="19°"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.761"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/max7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/height_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="right|center"
+                                android:text="20°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/doam7"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="@+id/doam7"
+                                app:layout_constraintTop_toBottomOf="@+id/doam7" />
+
+                            <TextView
+                                android:id="@+id/min7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:drawableRight="@drawable/low_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="17°"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="@+id/max7"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/max7"
+                                app:layout_constraintTop_toTopOf="@+id/max7" />
+
+                            <TextView
+                                android:id="@+id/mota7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text="Clear sky"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="@+id/nhietdo7"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/nhietdo7"
+                                app:layout_constraintTop_toBottomOf="@+id/nhietdo7" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="Gió:"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/gio7"
+                                app:layout_constraintEnd_toStartOf="@+id/gio7"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/mota7"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/gio7"
+                                app:layout_constraintVertical_bias="1.0" />
+
+                            <TextView
+                                android:id="@+id/gio7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:text="7.12"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/mota7" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="left|center"
+                                android:text=" Km/h"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.021"
+                                app:layout_constraintStart_toEndOf="@+id/gio7"
+                                app:layout_constraintTop_toTopOf="@+id/gio7"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <!--                <ImageView-->
+                            <!--                    android:id="@+id/icon1"-->
+                            <!--                    android:layout_width="74dp"-->
+                            <!--                    android:layout_height="66dp"-->
+                            <!--                    android:layout_marginTop="60dp"-->
+                            <!--                    android:src="@mipmap/ic_launcher"-->
+                            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                    app:layout_constraintHorizontal_bias="0.488"-->
+                            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <TextView
+                                android:id="@+id/doam7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="56dp"
+                                android:drawableRight="@drawable/doam_temp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="40"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+    <!--        <ImageView-->
+    <!--        android:id="@+id/Anh"-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="170dp"-->
+    <!--        android:layout_marginStart="176dp"-->
+    <!--        android:layout_marginTop="204dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:srcCompat="@drawable/sunny" />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/button"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:background="@color/colorTransparent1"-->
+    <!--        android:layout_marginBottom="48dp"-->
+    <!--        android:hint="v"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/btLay7day"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.919"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/bottom_background"
+            android:elevation="2dp"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@drawable/item_selector"
+            app:itemRippleColor="@color/lavender"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_menu"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="667dp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

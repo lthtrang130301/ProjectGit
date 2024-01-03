@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/custom_button_user">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter cityModel you want"
+        android:gravity="center"
+        android:fontFamily="@font/adlamdisplay_regular"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/insertCity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18dp"
+        android:hint="Enter cityModel"
+        android:background="@drawable/custom_button"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/insertNote"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18dp"
+        android:hint="Enter cityNote"
+        android:background="@drawable/custom_button"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/button_color"
+        android:text="Save" />
+
+</LinearLayout>

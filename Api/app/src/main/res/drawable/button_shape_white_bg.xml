@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:color="#ffffff"
+                android:width="3dp"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@color/black"
+    android:state_pressed="true"/>       <!-- Hiện màu đỏ khi ấn vào nút -->
+    <item android:drawable="@color/white"
+        android:state_pressed="false"/><!-- Hiện màu xanh da trời khi không nhấn nút -->
+</selector>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ApiWeather</string>
+    <string name="max">H</string>
+    <string name="min">L</string>
+    <string name="degrees">°</string>
+    <string name="action_search">Search</string>
+    <string name="two_dots">: </string>
+    <string name="weather_time">17:00</string>
+    <string name="weather_temperature">30°</string>
+    <string name="imperial">°F</string>
+    <string name="metric">°C</string>
+    <string name="information_weather">Low of 23 degrees, very clear skies.</string>
+    <string name="today">Today</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+</resources>

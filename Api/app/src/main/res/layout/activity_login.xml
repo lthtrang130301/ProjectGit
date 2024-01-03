@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgr_login"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".User.Login">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <ProgressBar
+            android:id="@+id/load"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarStyle"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom_edittext"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.codebyashish.autoimageslider.AutoImageSlider
+                    android:id="@+id/autoImageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:ais_auto_sliding="true"
+                    app:ais_corner_radius="10"
+                    app:ais_indicator_align="@string/left"
+                    app:ais_placeholder="@drawable/placeholder_default_loading"
+                    app:ais_time_interval="1000"
+                    app:ais_title_background="@android:color/transparent"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="103dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="35dp"
+                android:textColor="@color/purple_700"
+                android:fontFamily="cursive"
+                android:text="Weather App"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                app:counterMaxLength="20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+                <EditText
+                    android:id="@+id/login_usermail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email"
+                    android:theme="@style/ProgressBarStyle"
+                    android:background="@drawable/custom_edittext"
+                    android:drawableRight="@drawable/baseline_email_24"
+                    android:drawablePadding="8dp"
+                    android:maxLines="1"
+                    android:inputType="text|textEmailAddress"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/purple_700" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:errorEnabled="true"
+                android:layout_marginTop="20dp"
+                app:counterMaxLength="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/custom_edittext"
+                    android:drawablePadding="8dp"
+                    android:hint="Password"
+                    android:maxLength="10"
+                    android:inputType="textPassword"
+                    android:theme="@style/ProgressBarStyle"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/purple_700" />
+            <TextView
+                android:id="@+id/changePass_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                android:text="Don't remember password?"
+                android:textColor="@color/lavender2"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple_700"
+                android:text="Login"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <TextView
+                android:id="@+id/signup_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Not yet registered? Sign Up"
+                android:textColor="@color/lavender2"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

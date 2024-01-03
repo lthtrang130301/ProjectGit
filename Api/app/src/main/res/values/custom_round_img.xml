@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ArcImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">15%</item>
+        <item name="cornerSizeTopRight">15%</item>
+    </style>
+
+    <style name="ImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">30%</item>
+        <item name="cornerSizeBottomLeft">30%</item>
+    </style>
+</resources>
