@@ -1,7 +1,8 @@
 # WEATHER APP
 ## Introduction
-> I have developed an end-to-end weather application in Java language. I store data using Firebase, and SQLite.
-> Some basic functions: login, register, retrieve password, change personal information, display weather information by search city, etc.
+> - Call data from API (https://openweathermap.org/)
+> - I have developed an end-to-end weather application in Java language. I store data using Firebase, and SQLite.
+> - Some basic functions: login, register, retrieve password, change personal information, display weather information by search city, etc.
 ## ScreenShot
 > some layout
 #
